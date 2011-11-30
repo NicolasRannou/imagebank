@@ -38,12 +38,27 @@
             //echo "User doesnt not exist, let's create one!";
             $sql="INSERT INTO users(name, email, password) VALUES('$myusername', '$myemail', '$mypassword')";
             $result=mysql_query($sql, $con);
+            
+            // create folders
+            $thisdir = getcwd();
+            
+            $path = $thisdir . "/bank/" . $myusername;
+            mkdir( $path, 0777);
+            $pathdata = $path . "/data";
+            mkdir( $pathdata, 0777);
+            $pathmodified = $path . "/modified";
+            mkdir( $pathmodified, 0777);
+
+            
             //back to main page
-            header('Location: index.php');
+            echo "User registered";
+            echo "<meta http-equiv='refresh' content='3;url=index.php'>";
         }
         else
         {
-            echo "User already exists";
+            // back to same page
+            echo "User: '". $myusername ."' already exists";
+            echo "<meta http-equiv='refresh' content='3;url=register.php'>";
         }
     }
     
