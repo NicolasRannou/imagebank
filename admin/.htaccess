@@ -1,5 +1,5 @@
 AuthName "Password required"
 AuthType Basic
-AuthUserFile "/Users/nr52/Sites/UploadImages/admin/.htpasswd"
+AuthUserFile "/Users/nr52/Sites/imagebank/admin/.htpasswd"
 
 Require valid-user
