@@ -1,0 +1,5 @@
+AuthName "Password required"
+AuthType Basic
+AuthUserFile "/Users/nr52/Sites/UploadImages/admin/.htpasswd"
+
+Require valid-user
