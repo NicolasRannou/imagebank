@@ -33,7 +33,7 @@
         session_register("myemail");
         session_register("myusername");
         session_register("mypassword");
-        header("location:registeredarea.php");
+        header("location:registeredarea.html");
     }
     else {
         echo "Wrong Username or Password";

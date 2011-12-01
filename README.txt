@@ -3,6 +3,8 @@ MySQL
 Php
 Apache
 
+ImageMagick
+http://www.imagemagick.org/script/binary-releases.php
 # Extract files
 1-copy this folder to your websites directory
 
