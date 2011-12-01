@@ -5,6 +5,7 @@ require("login.php");
 <html>
 <head>
 <title>jQuery Dock from Queness WebBlog</title>
+<script type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript" src="libs/js/jquery-1.3.1.min.js"></script>
 <script type="text/javascript" src="libs/js/jquery.easing.1.3.js"></script>
 <script src="libs/jqueryFileTree.js" type="text/javascript"></script>
@@ -17,7 +18,7 @@ var full = String(directory.concat(a));
 var full2 = full.concat("/");
 $(document).ready( function() {
     $('#fileTreeDemo_1').fileTree({ root: full2, script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
-                                  alert(file)
+                                  openFile(file)
                                   ;})                  ;});
 </script>
 
@@ -102,10 +103,41 @@ padding: 5px;
 
 <div id="slidedown_bottom">
 <div class="example">
-<?php echo 'hello' ?>
+<h2>
+<?php echo 'Welcome ' ?>
 <?php echo $_SESSION["myemail"] ?>
-<h2>Default options</h2>
-<div id="fileTreeDemo_1" class="demo"></div>
+<br /></h2>
+<table border="1">
+<tr>
+<td>Your images</td>
+<td>Preview</td>
+<td>Filter</td>
+<td>Filtered image</td>
+</tr>
+<tr>
+<td><div id="fileTreeDemo_1" class="demo"></div></td>
+<td><div id="preview"></div></td>
+<td>row 2, cell 3</td>
+<td>row 2, cell 4</td>
+</tr>
+<tr>
+<td> <form enctype="multipart/form-data" action="upload.php" method="POST">
+Please choose a file: <input name="uploaded" type="file" /><br />
+<input type="submit" value="Upload" />
+</form>  </td>
+<td>row 3, cell 2</td>
+<td><form id='apply' action='apply.php' method='apply' accept-charset='UTF-8'>
+<button type="submit"><b><i>Modify account</i></b></button>
+</form></td>
+<td><form id='save' action='save.php' method='save' accept-charset='UTF-8'>
+<button type="submit"><b><i>Save image</i></b></button>
+</form></td></td>
+</tr>
+</table>
+
+
+
+
 </div>
 </div>
 </body>
