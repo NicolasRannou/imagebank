@@ -1,12 +1,5 @@
-<?
+<?php
 require("login.php");
-?>
-<? 
-session_start();
-if(!session_is_registered(myusername)){
-    echo "Wrong Username or Password";
-    echo "<meta http-equiv='refresh' content='3;url=index.php'>";
-}
 ?>
 
 <html>
@@ -18,14 +11,11 @@ if(!session_is_registered(myusername)){
 <link href="libs/jqueryFileTree.css" rel="stylesheet" type="text/css" media="screen" />
 
 <script type="text/javascript">
-
 $(document).ready( function() {
-                  
-                  $('#fileTreeDemo_1').fileTree({ root: '../../bank/', script: 'libs/connectors/jqueryFileTree.php' }, function(file) { 
-                                                alert(file);
-                                                });
-                  
-                  });
+    $('#fileTreeDemo_1').fileTree({ root: '../../bank/', script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
+                                  alert(file)
+                                  ;})
+                  ;});
 </script>
 
 <style>
@@ -109,11 +99,12 @@ padding: 5px;
 
 <div id="slidedown_bottom">
 <div class="example">
+<?php echo 'hello' ?>
+<?php echo $_SESSION["myemail"] ?>
 <h2>Default options</h2>
 <div id="fileTreeDemo_1" class="demo"></div>
 </div>
 </div>
-
 </body>
 </head>
 </html>

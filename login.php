@@ -35,7 +35,8 @@
     // If result matched $myemail and $mypassword, table row must be 1 row
     if($count==1){
         // Register $myusername, $mypassword and $myemail and redirect to file "login_success.php"
-        session_register("myusername");
+        //$_SESSION["myemail"] = $myemail;
+        session_register("myemail");
         header("location:registeredarea.php");
         exit;
     }
@@ -47,7 +48,8 @@
     }
     
     // if the session is not registered
-    if(session_is_registered("myusername") == false) {
+    //if(!isset($_SESSION['email']) AND !empty($_POST['email']){
+    if(session_is_registered("myemail") == false) {
         echo "Session is not registered, please log in";
         echo "<meta http-equiv='refresh' content='0;url=index.php'>";
     }
