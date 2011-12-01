@@ -20,6 +20,10 @@ $(document).ready( function() {
     $('#fileTreeDemo_1').fileTree({ root: full2, script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
                                   openFile(file)
                                   ;})                  ;});
+$(document).ready( function() {
+                  $('#fileTreeDemo_2').fileTree({ root: '../../filters/', script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
+                                                preview(file)
+                                                ;})                  ;});
 </script>
 
 <style>
@@ -111,14 +115,14 @@ padding: 5px;
 <tr>
 <td>Your images</td>
 <td>Preview</td>
-<td>Filter</td>
+<td>Filters</td>
 <td>Filtered image</td>
 </tr>
 <tr>
 <td><div id="fileTreeDemo_1" class="demo"></div></td>
 <td><div id="preview"></div></td>
-<td>row 2, cell 3</td>
-<td>row 2, cell 4</td>
+<td><div id="fileTreeDemo_2" class="demo"></div></td>
+<td><div id="filtered"></div></td>
 </tr>
 <tr>
 <td> <form enctype="multipart/form-data" action="upload.php" method="POST">
