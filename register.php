@@ -29,6 +29,8 @@
         $mypassword = mysql_real_escape_string($mypassword);
         $myemail = mysql_real_escape_string($myemail);
         
+        $mypassword = md5($mypassword);
+        
         //
         $sql="select COUNT(*) from users where name='$myusername'";
         $result = mysql_query($sql, $con);

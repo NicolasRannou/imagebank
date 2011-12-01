@@ -1,4 +1,8 @@
 <?php
+    session_name("MyLogin");
+    session_start();
+    
+    if($_GET['action'] == "login") {
     // parse file to get password
     $cnf = parse_ini_file("admin/.my.cnf");
     
@@ -21,6 +25,7 @@
     $myemail = stripslashes($myemail);
     $mypassword = mysql_real_escape_string($mypassword);
     $myemail = mysql_real_escape_string($myemail);
+    $mypassword = md5($mypassword);
         
     $sql="SELECT * FROM $tbl_name WHERE email='$myemail' and password='$mypassword'";
     $result=mysql_query($sql);
@@ -30,13 +35,20 @@
     // If result matched $myemail and $mypassword, table row must be 1 row
     if($count==1){
         // Register $myusername, $mypassword and $myemail and redirect to file "login_success.php"
-        session_register("myemail");
         session_register("myusername");
-        session_register("mypassword");
-        header("location:registeredarea.html");
+        header("location:registeredarea.php");
+        exit;
     }
     else {
         echo "Wrong Username or Password";
         echo "<meta http-equiv='refresh' content='3;url=index.php'>";
+        exit;
+    }
+    }
+    
+    // if the session is not registered
+    if(session_is_registered("myusername") == false) {
+        echo "Session is not registered, please log in";
+        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
     }
 ?>

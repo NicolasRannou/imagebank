@@ -24,9 +24,9 @@
     $sql="CREATE TABLE users(
     id INT NOT NULL AUTO_INCREMENT, 
     PRIMARY KEY(id),
-    name VARCHAR(30), 
-    email VARCHAR(30),
-    password VARCHAR(30))";
+    name VARCHAR(100), 
+    email VARCHAR(100),
+    password VARCHAR(100))";
     
     if (mysql_query($sql, $con))
     {
@@ -42,10 +42,10 @@
     id INT NOT NULL AUTO_INCREMENT, 
     PRIMARY KEY(id),
     owner INT, 
-    name VARCHAR(30),
-    modified VARCHAR(30),
-    type VARCHAR(30),
-    date VARCHAR(30))";
+    name VARCHAR(100),
+    modified VARCHAR(100),
+    type VARCHAR(100),
+    date VARCHAR(100))";
     
     if (mysql_query($sql, $con))
     {

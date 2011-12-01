@@ -1,6 +1,6 @@
    <body>
 		
-    <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+    <form id='login' action='login.php?action=login' method='post' accept-charset='UTF-8'>
         <label for='username' >Email:</label>
         <input type='text' name='email' id='email'  maxlength="50" /> <br />
         <label for='password' >Password:</label>
