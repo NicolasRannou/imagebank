@@ -1,6 +1,7 @@
 <?php
-    
-    if (isset($_POST['login']) AND isset($_POST['pass']) AND isset($_POST['email']))
+    if (    isset($_POST['login']) AND !empty($_POST['login'])
+        AND isset($_POST['pass'])  AND !empty($_POST['pass'])
+        AND isset($_POST['email']) AND !empty($_POST['email']))
     {
         // parse file to get password
         $cnf = parse_ini_file("admin/.my.cnf");
@@ -44,10 +45,10 @@
             
             $path = $thisdir . "/bank/" . $myusername;
             mkdir( $path, 0777);
-            $pathdata = $path . "/data";
-            mkdir( $pathdata, 0777);
-            $pathmodified = $path . "/modified";
-            mkdir( $pathmodified, 0777);
+            //$pathdata = $path . "/data";
+            //mkdir( $pathdata, 0777);
+            //$pathmodified = $path . "/modified";
+            //mkdir( $pathmodified, 0777);
 
             
             //back to main page
@@ -66,15 +67,15 @@
     {
     ?>
 
-<p>Enter personnal informations</p>
-
+<p>Enter account informations</p>
 <form method="post">
 <p>
-Username: <input type="text" name="login"><br />
-Password: <input type="text" name="pass"><br />
-Email: <input type="text" name="email"><br /><br />
+Username*: <input type="text" name="login"><br>
+Password*: <input type="text" name="pass"><br>
+Email*: <input type="text" name="email"><br><br>
 <input type="submit" value="Register">
 </p>
+<p>* Required fields</p>
 </form>
 
 <?php
