@@ -11,11 +11,14 @@ require("login.php");
 <link href="libs/jqueryFileTree.css" rel="stylesheet" type="text/css" media="screen" />
 
 <script type="text/javascript">
+var directory = '../../bank/';
+var a = "<?php echo $_SESSION['myemail']; ?>";
+var full = String(directory.concat(a));
+var full2 = full.concat("/");
 $(document).ready( function() {
-    $('#fileTreeDemo_1').fileTree({ root: '../../bank/', script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
+    $('#fileTreeDemo_1').fileTree({ root: full2, script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
                                   alert(file)
-                                  ;})
-                  ;});
+                                  ;})                  ;});
 </script>
 
 <style>
