@@ -14,9 +14,11 @@
     
     $env_vars = "/Users/nr52/INSTALL/ImageMagick-6.7.3/bin/";
 
-    $fullcommand = $env_vars . $command . " ../" . $image . " ../" . $newimage;
+    # clean the command
+    $fullcommand = $env_vars . escapeshellarg($command) . " ../" . $image . " ../" . $newimage;
     
     system($fullcommand);
     
+    #return 2 images to update visualization and show paths
     echo $image . " " . $newimage;
 ?>
