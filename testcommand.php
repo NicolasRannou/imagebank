@@ -3,7 +3,7 @@
     $command = &$_GET['var1'];
     $image = $_SESSION["currentimage"];
     
-    $newimage = $image . "-new";
+    $newimage = $image . "-new.jpg";
     
     
     
@@ -12,6 +12,8 @@
 
     $fullcommand = $env_vars . $command . " " . $image . " " . $newimage . " 2>&1";
     
+    system($fullcommand);
+    
     //echo $fullcommand;
-    echo system($fullcommand);
+    echo $image. " " . $newimage;
 ?>

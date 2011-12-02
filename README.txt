@@ -5,6 +5,8 @@ Apache
 
 ImageMagick
 http://www.imagemagick.org/script/binary-releases.php
+put location in script
+
 # Extract files
 1-copy this folder to your websites directory
 

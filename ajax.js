@@ -142,6 +142,14 @@ function HandleResponseUpdateTestCommand(response)
 {
     //document.getElementById('preview').innerHTML = ag.concat("/>\"");
     document.getElementById('ajaxecho').innerHTML = response;
+    
+    images = response.split(" ");
+    
+    // set new image
+    var im = "<img id=\"myimage\" src=";
+    var ag = im.concat(images[1]);
+    document.getElementById('filtered').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
+    
 }
 
 function preview(file) {
