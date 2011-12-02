@@ -1,0 +1,7 @@
+user modifies password
+admin modifies pass
+admin can do more stuffs -> send emails to user, 
+
+limit size max of image directory
+some refresh issues, field are getting empty, etc.
+
