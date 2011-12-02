@@ -50,32 +50,8 @@ function UpdateCurrentImage(filename)
   xmlHttp.send(null);
 }
 
-function RequestImage(filename)
-{
-  var xmlHttp = getXMLHttp();
-  
-  xmlHttp.onreadystatechange = function()
-  {
-    if(xmlHttp.readyState == 4)
-    {
-      HandleResponse(xmlHttp.responseText, filename);
-    }
-  }
-    
-  xmlHttp.open("GET", "ajax.php?var1=value1&var2=value2", true); 
-  xmlHttp.send(null);
-}
-
 function HandleUpdateCurrentImage(response, filename)
 {
-    //document.getElementById('preview').innerHTML = ag.concat("/>\"");
-    //document.getElementById('ajaxecho').innerHTML = response;
-}
-
-function HandleResponse(response, filename)
-{
-    //document.getElementById('preview').innerHTML = ag.concat("/>\"");
-    document.getElementById('filtered').innerHTML = response;
 }
 
 function UpdateImageIfAny()
@@ -101,15 +77,12 @@ function RequestUpdateImageIfAny()
 
 function HandleResponseUpdateImageIfAny(response)
 {
-    //document.getElementById('preview').innerHTML = ag.concat("/>\"");
-    //document.getElementById('ajaxecho').innerHTML = response;
     var im = "<img id=\"myimage\" src=";
     var ag = im.concat(file.substring(6));
     document.getElementById('preview').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
 }
 
 function openFile(file) {
-    //document.getElementById('preview').innerHTML = "<img src=bank/rannou/25696c5.jpg>";
     var im = "<img id=\"myimage\" src=";
     var ag = im.concat(file.substring(6));
     document.getElementById('preview').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
@@ -117,7 +90,6 @@ function openFile(file) {
 }
 
 function testCommand(file) {
-    //document.getElementById('ajaxecho').innerHTML = file;
     UpdateTestCommand(file);
 }
 
@@ -142,9 +114,6 @@ function UpdateTestCommand(file)
 
 function HandleResponseUpdateTestCommand(response)
 {
-    //document.getElementById('preview').innerHTML = ag.concat("/>\"");
-    //document.getElementById('ajaxecho').innerHTML = response;
-    
     document.getElementById('ajaxecho').innerHTML = response;
     
     images = response.split(" ");
@@ -153,26 +122,4 @@ function HandleResponseUpdateTestCommand(response)
     var im = "<img id=\"myimage\" src=";
     var ag = im.concat(images[1]);
     document.getElementById('filtered').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
-}
-
-function preview(file) {
-    var getvalue=document.getElementById("myimage").getAttribute("value");
-    
-    document.getElementById('filtered').innerHTML = file;
-    //RequestImage();
-    // get image name
-    // get filter
-    // server process
-    // server sends new image location
-}
-
-function clicked() {
-    var getvalue=document.getElementById("command").getAttribute("value");
-
-    //document.getElementById('ajaxecho').innerHTML = getvalue;
-    //RequestImage();
-    // get image name
-    // get filter
-    // server process
-    // server sends new image location
 }

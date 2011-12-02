@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $image = $_SESSION["myusername"];
+    $image = $_SESSION["myemail"];
     
     $target = "bank/".$image."/original/";
     
