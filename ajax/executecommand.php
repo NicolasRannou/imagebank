@@ -22,7 +22,7 @@
     # clean the command
     $fullcommand = $env_vars . $command . " ../" . $image . " ../" . $newimage;
     
-    system($fullcommand);
+    system(escapeshellarg($fullcommand));
     
     #return 2 images to update visualization and show paths
     #echo $ext . " " . $realpath;
