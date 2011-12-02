@@ -4,6 +4,8 @@
     $image = $_SESSION["currentimage"];
     
     $newimage = $image . "-new.jpg";
+    $_SESSION["newimage"] = $newimage;
+    $_SESSION["command"] = $command;
     
     
     

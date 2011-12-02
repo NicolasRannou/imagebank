@@ -69,7 +69,7 @@ function RequestImage(filename)
 function HandleUpdateCurrentImage(response, filename)
 {
     //document.getElementById('preview').innerHTML = ag.concat("/>\"");
-    document.getElementById('ajaxecho').innerHTML = response;
+    //document.getElementById('ajaxecho').innerHTML = response;
 }
 
 function HandleResponse(response, filename)
@@ -95,15 +95,17 @@ function RequestUpdateImageIfAny()
     }
   }
     
-  xmlHttp.open("GET", "currentimage.php", true); 
+  xmlHttp.open("GET", "currentimageupdate.php", true); 
   xmlHttp.send(null);
 }
 
 function HandleResponseUpdateImageIfAny(response)
 {
     //document.getElementById('preview').innerHTML = ag.concat("/>\"");
-    document.getElementById('ajaxecho').innerHTML = "heeellloo";
-    document.getElementById('ajaxecho2').innerHTML = response;
+    //document.getElementById('ajaxecho').innerHTML = response;
+    var im = "<img id=\"myimage\" src=";
+    var ag = im.concat(file.substring(6));
+    document.getElementById('preview').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
 }
 
 function openFile(file) {
@@ -141,7 +143,7 @@ function UpdateTestCommand(file)
 function HandleResponseUpdateTestCommand(response)
 {
     //document.getElementById('preview').innerHTML = ag.concat("/>\"");
-    document.getElementById('ajaxecho').innerHTML = response;
+    //document.getElementById('ajaxecho').innerHTML = response;
     
     images = response.split(" ");
     
@@ -149,7 +151,6 @@ function HandleResponseUpdateTestCommand(response)
     var im = "<img id=\"myimage\" src=";
     var ag = im.concat(images[1]);
     document.getElementById('filtered').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
-    
 }
 
 function preview(file) {
@@ -166,7 +167,7 @@ function preview(file) {
 function clicked() {
     var getvalue=document.getElementById("command").getAttribute("value");
 
-    document.getElementById('ajaxecho').innerHTML = getvalue;
+    //document.getElementById('ajaxecho').innerHTML = getvalue;
     //RequestImage();
     // get image name
     // get filter

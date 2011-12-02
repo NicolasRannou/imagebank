@@ -28,14 +28,13 @@ $(document).ready(function() {
                                         if(event.which == 13){
                                           //value = $("#target").val();
                                           //alert(value);
+                                        //alert($("#target").val() );
+                                        testCommand( $("#target").val() );
                                         }
                                         });
                   });
 
-//$(document).ready( function() {
-//                  $('#fileTreeDemo_2').fileTree({ root: '../../filters/', script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
-//                                                preview(file)
-//                                                ;})                  ;});
+//UpdateImageIfAny();
 </script>
 
 <style>
@@ -134,11 +133,7 @@ padding: 5px;
 <td><div id="fileTreeDemo_1" class="demo"></div></td>
 <td><div id="preview"></div></td>
 <td><div id="fileTreeDemo_2"></div>
-<form>
-<fieldset>
 <input id="target" type="text" value="enter your command" />
-</fieldset>
-</form>
 </td>
 <td><div id="filtered"></div></td>
 </tr>
