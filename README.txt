@@ -1,7 +1,7 @@
 # imagebank
 
 FEATURES:
--MAMP, javascipt and html
+-AMP, javascipt and html
 -easy setup
 -use jquery
 -admin secured area via htpsswd
@@ -40,7 +40,8 @@ http://www.addedbytes.com/lab/password-protect-a-directory-with-htaccess/#result
 9- go to the website, to the admin section: imagebank/admin
 10- enter your username, password then create DB
 
-# bank write access
+# Mke the bank folder writeable
+11- see chmod
 
 
 # Everything is setup now!
