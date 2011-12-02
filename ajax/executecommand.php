@@ -1,6 +1,8 @@
 <?php
     session_start();
     $command = &$_GET['var1'];
+    $command = stripslashes($command);
+    
     $image = $_SESSION["currentimage"];
     
     $ext = end(explode('.', $image));
