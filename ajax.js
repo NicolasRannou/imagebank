@@ -54,14 +54,17 @@ function HandleResponse(response, filename)
 
 function openFile(file) {
     //document.getElementById('preview').innerHTML = "<img src=bank/rannou/25696c5.jpg>";
-    var im = "<img src=";
+    var im = "<img id=\"myimage\" src=";
     var ag = im.concat(file.substring(6));
     document.getElementById('preview').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
     //RequestImage(file);
 }
 
 function preview(file) {
-    RequestImage();
+    var getvalue=document.getElementById("myimage").getAttribute("src")
+    
+    document.getElementById('filtered').innerHTML = file;
+    //RequestImage();
     // get image name
     // get filter
     // server process

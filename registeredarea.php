@@ -4,7 +4,7 @@ require("login.php");
 
 <html>
 <head>
-<title>jQuery Dock from Queness WebBlog</title>
+<title>Registered area</title>
 <script type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript" src="libs/js/jquery-1.3.1.min.js"></script>
 <script type="text/javascript" src="libs/js/jquery.easing.1.3.js"></script>
