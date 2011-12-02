@@ -2,9 +2,13 @@
 require("login.php");
 ?>
 
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
 <head>
 <title>Registered area</title>
+
+<!-- requiered scripts -->
+
 <script type="text/javascript" src="js/ajax.js"></script>
 <link href="css/registeredarea.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="libs/js/jquery-1.3.1.min.js"></script>
@@ -12,13 +16,15 @@ require("login.php");
 <script src="libs/jqueryFileTree.js" type="text/javascript"></script>
 <link href="libs/jqueryFileTree.css" rel="stylesheet" type="text/css" media="screen" />
 
+<!-- Create the tree and input in javascript -->
+
 <script type="text/javascript">
 var directory = '../../bank/';
-var a = "<?php echo $_SESSION['myemail']; ?>";
-var full = String(directory.concat(a));
-var full2 = full.concat("/");
+var myemail = "<?php echo $_SESSION['myemail']; ?>";
+var fullpath = directory.concat(myemail);
+
 $(document).ready( function() {
-    $('#fileTree').fileTree({ root: full2, script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
+    $('#fileTree').fileTree({ root: fullpath.concat("/"), script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
                                   openImage(file)
                                   ;})                  ;});
 $(document).ready(function() {
@@ -37,7 +43,7 @@ UpdateImages();
 <body>
 
     <div id="slidedown_bottom">
-    <div class="example">
+    <div class="demo">
     <h2>
     <?php echo 'Welcome ' ?>
     <?php echo $_SESSION["myemail"] ?>

@@ -3,11 +3,6 @@ margin:0;
 padding:0
 }
 
-#slidedown_top {
-height: 70px;
-background-color:#666;
-}
-
 #slidedown_bottom {
 position: absolute;
 width: 100%;
@@ -15,48 +10,9 @@ height:100%;
 background-color:#666;
 }
 
-#slidedown_content {
-position: absolute;
-width: 100%;
-height: 250px;
-top: -205px;
-text-align:center;
-background:url(libs/bg.gif) repeat-x 0 bottom;
-z-index:999;
-} 
-
-#slidedown_content .content {
-margin:0 auto; 
-width:830px;
-height:205px;
-}
-
-/* Styles for content */
-
-#slidedown_content .content .block {
-float:left; 
-width:250px;
-padding:0 4px 0 4px; 
-margin: 0 4px 0 4px;
-
-text-align:left;
-font-family:georgia; 
-font-size:11px; 
-color:#ccc; 
-}
-
-#slidedown_content .footer {
-height:40px;
-}
-
-#slidedown_content .content li {
-padding:0; 
-margin:4px 0
-}
-
 .clear {clear:both}
 
-.example {
+.demo {
     float: left;
 margin: 15px;
 }

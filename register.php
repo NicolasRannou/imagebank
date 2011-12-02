@@ -64,15 +64,15 @@
     {
     ?>
 
-<p>Enter account informations</p>
-<form method="post">
-<p>
-Email*: <input type="text" name="email"><br>
-Password*: <input type="text" name="pass"><br>
-<input type="submit" value="Register">
-</p>
-<p>* Required fields</p>
-</form>
+    <p>Enter account informations</p>
+    <form method="post">
+    <p>
+    Email*: <input type="text" name="email"><br>
+    Password*: <input type="text" name="pass"><br>
+    <input type="submit" value="Register">
+    </p>
+    <p>* Required fields</p>
+    </form>
 
 <?php
     }

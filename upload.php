@@ -15,5 +15,5 @@
     else {
         echo "Sorry, there was a problem uploading your file.";
     }
-    echo "<meta http-equiv='refresh' content='5;url=registeredarea.php'>";
+    echo "<meta http-equiv='refresh' content='2;url=registeredarea.php'>";
     ?>
