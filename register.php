@@ -1,7 +1,6 @@
 <?php
-    if (    isset($_POST['login']) AND !empty($_POST['login'])
-        AND isset($_POST['pass'])  AND !empty($_POST['pass'])
-        AND isset($_POST['email']) AND !empty($_POST['email']))
+    if (    isset($_POST['email']) AND !empty($_POST['email'])
+        AND isset($_POST['pass'])  AND !empty($_POST['pass']))
     {
         // parse file to get password
         $cnf = parse_ini_file("admin/.my.cnf");
@@ -17,35 +16,31 @@
         mysql_select_db("$db_name", $con)or die("cannot select DB");
         
         // username and password sent from form 
-        $myusername=$_POST['login']; 
-        $mypassword=$_POST['pass'];
         $myemail=$_POST['email'];
+        $mypassword=$_POST['pass'];
         
         // To protect MySQL injection (more detail about MySQL injection)
-        $myusername = stripslashes($myusername);
-        $mypassword = stripslashes($mypassword);
         $myemail = stripslashes($myemail);
-        $myusername = mysql_real_escape_string($myusername);
-        $mypassword = mysql_real_escape_string($mypassword);
+        $mypassword = stripslashes($mypassword);
         $myemail = mysql_real_escape_string($myemail);
+        $mypassword = mysql_real_escape_string($mypassword);
         
         $mypassword = md5($mypassword);
         
         //
-        $sql="select COUNT(*) from users where name='$myusername'";
+        $sql="select COUNT(*) from users where email='$myemail'";
         $result = mysql_query($sql, $con);
-        //echo mysql_result($result, 0);
         
         if (mysql_result($result, 0) == 0)
         {
             //echo "User doesnt not exist, let's create one!";
-            $sql="INSERT INTO users(name, email, password) VALUES('$myusername', '$myemail', '$mypassword')";
+            $sql="INSERT INTO users(email, password) VALUES('$myemail', '$mypassword')";
             $result=mysql_query($sql, $con);
             
             // create folders
             $thisdir = getcwd();
             
-            $path = $thisdir . "/bank/" . $myusername;
+            $path = $thisdir . "/bank/" . $myemail;
             mkdir( $path, 0777);
             $pathdata = $path . "/original";
             mkdir( $pathdata, 0777);
@@ -60,7 +55,7 @@
         else
         {
             // back to same page
-            echo "User: '". $myusername ."' already exists";
+            echo "User: '". $myemail ."' already exists in database";
             echo "<meta http-equiv='refresh' content='3;url=register.php'>";
         }
     }
@@ -72,9 +67,8 @@
 <p>Enter account informations</p>
 <form method="post">
 <p>
-Username*: <input type="text" name="login"><br>
+Email*: <input type="text" name="email"><br>
 Password*: <input type="text" name="pass"><br>
-Email*: <input type="text" name="email"><br><br>
 <input type="submit" value="Register">
 </p>
 <p>* Required fields</p>

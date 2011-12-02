@@ -1,5 +1,4 @@
 <?
-session_name("MyLogin");
 session_start();
 session_destroy();
 
@@ -14,7 +13,21 @@ if($_GET['login'] == "failed") {
        <title>Login</title>
        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
    </head>
-   //<?php mail('huko.rannou@gmail.com', 'My Subject', 'Hello'); ?>
-   <?php include("body.php"); ?>
+#<?php mail('huko.rannou@gmail.com', 'My Subject', 'Hello'); ?>
+   <body>
+
+   <form id='login' action='login.php?action=login' method='post' accept-charset='UTF-8'>
+   <label for='username' >Email:</label>
+   <input type='text' name='email' id='email'  maxlength="50" /> <br />
+   <label for='password' >Password:</label>
+   <input type='password' name='password' id='password' maxlength="50" /> <br />
+   <button type="submit"><b><i>Login</i></b></button>
+   </form>
+
+   <form id='register' action='register.php' method='post' accept-charset='UTF-8'>
+   <button type="submit"><b><i>Register</i></b></button>
+   </form>
+
+</body>
 </html>
 
