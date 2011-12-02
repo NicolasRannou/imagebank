@@ -3,7 +3,6 @@
     $image = $_SESSION["myemail"];
     
     $target = "bank/".$image."/original/";
-    $target = escapeshellarg($target);
 
     echo $target;
     
