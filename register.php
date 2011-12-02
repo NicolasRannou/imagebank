@@ -47,10 +47,10 @@
             
             $path = $thisdir . "/bank/" . $myusername;
             mkdir( $path, 0777);
-            //$pathdata = $path . "/data";
-            //mkdir( $pathdata, 0777);
-            //$pathmodified = $path . "/modified";
-            //mkdir( $pathmodified, 0777);
+            $pathdata = $path . "/original";
+            mkdir( $pathdata, 0777);
+            $pathmodified = $path . "/modified";
+            mkdir( $pathmodified, 0777);
 
             
             //back to main page

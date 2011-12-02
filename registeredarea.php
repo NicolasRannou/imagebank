@@ -1,5 +1,5 @@
 <?php
-require_once("login.php");
+require("login.php");
 ?>
 
 <html>
@@ -116,7 +116,6 @@ padding: 5px;
 <?php echo 'Welcome ' ?>
 <?php echo $_SESSION["myemail"] ?>
 <br /></h2>
-
 <form enctype="multipart/form-data" action="upload.php" method="POST">
 Please choose a file: <input name="uploaded" type="file" /><br />
 <input type="submit" value="Upload" />

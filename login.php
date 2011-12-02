@@ -41,8 +41,6 @@
         //$_SESSION["myemail"] = $myemail;
         $_SESSION["myemail"] = $myemail;
         $_SESSION["myusername"] = $myusername;
-        session_register("myemail");
-        session_register("myusername");
         header("location:registeredarea.php");
         exit;
     }
@@ -53,9 +51,7 @@
     }
     }
     
-    // if the session is not registered
-    //if(!isset($_SESSION['email']) AND !empty($_POST['email']){
-    if(session_is_registered("myemail") == false) {
+    if(!isset( $_SESSION["myemail"]) OR empty($_SESSION["myemail"]) ) {
         echo "Session is not registered, please log in";
         echo "<meta http-equiv='refresh' content='0;url=index.php'>";
     }
