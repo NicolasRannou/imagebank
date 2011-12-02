@@ -36,4 +36,4 @@ TODO:
 -user/admin modify password
 -more secured?
 -prettier (css)
-
+-email image
