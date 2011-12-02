@@ -1,3 +1,7 @@
+// helper method
+//
+//
+
 function getXMLHttp()
 {
   var xmlHttp
@@ -30,7 +34,19 @@ function getXMLHttp()
   return xmlHttp;
 }
 
-function UpdateCurrentImage(filename)
+
+// When we open an image
+//
+//
+
+function openImage(file) {
+    var im = "<img id=\"myimage\" src=";
+    var ag = im.concat(file.substring(6));
+    document.getElementById('preview').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
+    RequestOpenImage(file.substring(6));
+}
+
+function RequestOpenImage(filename)
 {
   var xmlHttp = getXMLHttp();
   
@@ -38,28 +54,32 @@ function UpdateCurrentImage(filename)
   {
     if(xmlHttp.readyState == 4)
     {
-      HandleUpdateCurrentImage(xmlHttp.responseText, filename);
+      HandleOpenImage(xmlHttp.responseText, filename);
     }
   }
 
   
-  var im = "ajax/currentimage.php?var1=";
+  var im = "ajax/loadimage.php?var1=";
   var ag = im.concat(filename);
   
   xmlHttp.open("GET", ag, true); 
   xmlHttp.send(null);
 }
 
-function HandleUpdateCurrentImage(response, filename)
+function HandleOpenImage(response, filename)
 {
 }
 
-function UpdateImageIfAny()
+// When we refresh the page
+//
+//
+
+function UpdateImages()
 {
-  RequestUpdateImageIfAny();
+  RequestUpdateImage();
 }
 
-function RequestUpdateImageIfAny()
+function RequestUpdateImage()
 {
   var xmlHttp = getXMLHttp();
   
@@ -67,33 +87,37 @@ function RequestUpdateImageIfAny()
   {
     if(xmlHttp.readyState == 4)
     {
-      HandleResponseUpdateImageIfAny(xmlHttp.responseText);
+      HandleResponseUpdateImage(xmlHttp.responseText);
     }
   }
     
-  xmlHttp.open("GET", "ajax/currentimageupdate.php", true); 
+  xmlHttp.open("GET", "ajax/updateimages.php", true); 
   xmlHttp.send(null);
 }
 
-function HandleResponseUpdateImageIfAny(response)
+function HandleResponseUpdateImage(response)
 {
+    images = response.split(" ");
+    //
     var im = "<img id=\"myimage\" src=";
-    var ag = im.concat(file.substring(6));
+    var ag = im.concat(images[0]);
     document.getElementById('preview').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
-}
-
-function openFile(file) {
+    
+    // set new image
     var im = "<img id=\"myimage\" src=";
-    var ag = im.concat(file.substring(6));
-    document.getElementById('preview').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
-    UpdateCurrentImage(file.substring(6));
+    var ag = im.concat(images[1]);
+    document.getElementById('filtered').innerHTML = ag.concat(" height=\"200\" width=\"200\" />");
 }
 
-function testCommand(file) {
-    UpdateTestCommand(file);
+// When a command is executed
+//
+//
+
+function executeCommand(file) {
+    UpdateExecuteCommand(file);
 }
 
-function UpdateTestCommand(file)
+function UpdateExecuteCommand(file)
 {
   var xmlHttp = getXMLHttp();
   
@@ -101,18 +125,18 @@ function UpdateTestCommand(file)
   {
     if(xmlHttp.readyState == 4)
     {
-      HandleResponseUpdateTestCommand(xmlHttp.responseText);
+      HandleResponseExecuteCommand(xmlHttp.responseText);
     }
   }
   
-  var im = "ajax/testcommand.php?var1=";
+  var im = "ajax/executecommand.php?var1=";
   var ag = im.concat(file);
   
   xmlHttp.open("GET", ag, true);
   xmlHttp.send(null);
 }
 
-function HandleResponseUpdateTestCommand(response)
+function HandleResponseExecuteCommand(response)
 {
     document.getElementById('ajaxecho').innerHTML = response;
     

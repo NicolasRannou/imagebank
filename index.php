@@ -13,7 +13,6 @@ if($_GET['login'] == "failed") {
        <title>Login</title>
        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
    </head>
-#<?php mail('huko.rannou@gmail.com', 'My Subject', 'Hello'); ?>
    <body>
 
    <form id='login' action='login.php?action=login' method='post' accept-charset='UTF-8'>

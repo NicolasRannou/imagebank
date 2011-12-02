@@ -29,6 +29,7 @@ FEATURES:
 -upload image
 -can run any command from convert (maybe not enough restricted...?)
 -for each user: 1 folder for original and 1 folder for processed images
+-if file already on server it's fine
 
 TODO:
 -preview not saved
@@ -39,3 +40,17 @@ TODO:
 -email image
 -login page refresh
 -upload/process update DB
+-2 images with same name..?
+
+user modifies password
+admin modifies pass
+admin can do more stuffs -> send emails to user, 
+
+limit size max of image directory
+some refresh issues, field are getting empty, etc.
+
+chmod 777 some files
+images still visible after refresh
+
+command modified
+check command input

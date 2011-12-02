@@ -40,7 +40,7 @@
     }
     else {
         echo "Wrong Username or Password";
-        echo "<meta http-equiv='refresh' content='3;url=index.php'>";
+        echo "<meta http-equiv='refresh' content='1;url=index.php'>";
         exit;
     }
     }

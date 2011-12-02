@@ -19,17 +19,18 @@ var full = String(directory.concat(a));
 var full2 = full.concat("/");
 $(document).ready( function() {
     $('#fileTree').fileTree({ root: full2, script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
-                                  openFile(file)
+                                  openImage(file)
                                   ;})                  ;});
 $(document).ready(function() {
                   $("#target").keypress(function(event) {
                                         if(event.which == 13){
-                                        testCommand( $("#target").val() );
+                                        executeCommand( $("#target").val() );
                                         }
                                         });
                   });
 
-//UpdateImageIfAny();
+// update images on refresh
+UpdateImages();
 </script>
 
 </head>

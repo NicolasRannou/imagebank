@@ -50,13 +50,13 @@
             
             //back to main page
             echo "User registered";
-            echo "<meta http-equiv='refresh' content='3;url=index.php'>";
+            echo "<meta http-equiv='refresh' content='1;url=index.php'>";
         }
         else
         {
             // back to same page
             echo "User: '". $myemail ."' already exists in database";
-            echo "<meta http-equiv='refresh' content='3;url=register.php'>";
+            echo "<meta http-equiv='refresh' content='1;url=register.php'>";
         }
     }
     
