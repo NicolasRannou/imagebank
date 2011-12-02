@@ -1,5 +1,5 @@
 <?php
-require("login.php");
+require_once("login.php");
 ?>
 
 <html>
@@ -20,10 +20,22 @@ $(document).ready( function() {
     $('#fileTreeDemo_1').fileTree({ root: full2, script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
                                   openFile(file)
                                   ;})                  ;});
-$(document).ready( function() {
-                  $('#fileTreeDemo_2').fileTree({ root: '../../filters/', script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
-                                                preview(file)
-                                                ;})                  ;});
+$(document).ready(function() {
+                  $('button.alert').click(function() {
+                                          testCommand( $("#target").val() );
+                                          });
+                  $("#target").keypress(function(event) {
+                                        if(event.which == 13){
+                                          //value = $("#target").val();
+                                          //alert(value);
+                                        }
+                                        });
+                  });
+
+//$(document).ready( function() {
+//                  $('#fileTreeDemo_2').fileTree({ root: '../../filters/', script: 'libs/connectors/jqueryFileTree.php' }, function(file) {
+//                                                preview(file)
+//                                                ;})                  ;});
 </script>
 
 <style>
@@ -121,7 +133,13 @@ padding: 5px;
 <tr>
 <td><div id="fileTreeDemo_1" class="demo"></div></td>
 <td><div id="preview"></div></td>
-<td><div id="fileTreeDemo_2" class="demo"></div></td>
+<td><div id="fileTreeDemo_2"></div>
+<form>
+<fieldset>
+<input id="target" type="text" value="enter your command" />
+</fieldset>
+</form>
+</td>
 <td><div id="filtered"></div></td>
 </tr>
 <tr>
@@ -129,18 +147,13 @@ padding: 5px;
 Please choose a file: <input name="uploaded" type="file" /><br />
 <input type="submit" value="Upload" />
 </form>  </td>
-<td>row 3, cell 2</td>
-<td><form id='apply' action='apply.php' method='apply' accept-charset='UTF-8'>
-<button type="submit"><b><i>Modify account</i></b></button>
-</form></td>
+<td><div id="ajaxecho"></div></td>
+<td><button class="alert">Test command</button></td>
 <td><form id='save' action='save.php' method='save' accept-charset='UTF-8'>
-<button type="submit"><b><i>Save image</i></b></button>
+<button type="submit">Save image</button>
 </form></td></td>
 </tr>
 </table>
-
-
-
 
 </div>
 </div>
