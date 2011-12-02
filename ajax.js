@@ -145,6 +145,8 @@ function HandleResponseUpdateTestCommand(response)
     //document.getElementById('preview').innerHTML = ag.concat("/>\"");
     //document.getElementById('ajaxecho').innerHTML = response;
     
+    document.getElementById('ajaxecho').innerHTML = response;
+    
     images = response.split(" ");
     
     // set new image

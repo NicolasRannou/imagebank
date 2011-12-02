@@ -21,14 +21,8 @@ $(document).ready( function() {
                                   openFile(file)
                                   ;})                  ;});
 $(document).ready(function() {
-                  $('button.alert').click(function() {
-                                          testCommand( $("#target").val() );
-                                          });
                   $("#target").keypress(function(event) {
                                         if(event.which == 13){
-                                          //value = $("#target").val();
-                                          //alert(value);
-                                        //alert($("#target").val() );
                                         testCommand( $("#target").val() );
                                         }
                                         });
@@ -122,6 +116,12 @@ padding: 5px;
 <?php echo 'Welcome ' ?>
 <?php echo $_SESSION["myemail"] ?>
 <br /></h2>
+
+<form enctype="multipart/form-data" action="upload.php" method="POST">
+Please choose a file: <input name="uploaded" type="file" /><br />
+<input type="submit" value="Upload" />
+</form>
+
 <table border="1">
 <tr>
 <td>Your images</td>
@@ -138,18 +138,12 @@ padding: 5px;
 <td><div id="filtered"></div></td>
 </tr>
 <tr>
-<td> <form enctype="multipart/form-data" action="upload.php" method="POST">
-Please choose a file: <input name="uploaded" type="file" /><br />
-<input type="submit" value="Upload" />
-</form>  </td>
+<td></td>
 <td><div id="ajaxecho"></div></td>
-<td><button class="alert">Test command</button></td>
-<td><form id='save' action='save.php' method='save' accept-charset='UTF-8'>
-<button type="submit">Save image</button>
-</form></td></td>
+<td></td>
+<td></td></td>
 </tr>
 </table>
-
 </div>
 </div>
 </body>
