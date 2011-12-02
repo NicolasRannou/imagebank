@@ -37,3 +37,5 @@ TODO:
 -more secured?
 -prettier (css)
 -email image
+-login page refresh
+-upload/process update DB
