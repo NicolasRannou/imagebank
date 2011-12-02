@@ -3,8 +3,9 @@
 FEATURES:
 -MAMP, javascipt and html
 -easy setup
--admin secured area
--encrypted passwords in db
+-use jquery
+-admin secured area via htpsswd
+-encrypted passwords in db (md5)
 -php page requires login (if user not logged in an tries to access page, he is redirected to login page)
 -secured against sql injection (TODO: check the command too)
 -upload image
@@ -33,11 +34,14 @@ ImageMagick
 # Choose admin password
 7-get new username and passord
 http://www.addedbytes.com/lab/password-protect-a-directory-with-htaccess/#result
-8- update admin/.htpasswd
+8- update admin/.htpasswd and admin/.htaccess
 
 # Create the tables
 9- go to the website, to the admin section: imagebank/admin
 10- enter your username, password then create DB
+
+# bank write access
+
 
 # Everything is setup now!
 
