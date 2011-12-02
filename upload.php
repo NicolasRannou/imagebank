@@ -9,4 +9,5 @@
     else {
         echo "Sorry, there was a problem uploading your file.";
     }
+    echo "<meta http-equiv='refresh' content='3;url=registeredarea.php'>";
     ?>

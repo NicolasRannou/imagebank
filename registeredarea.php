@@ -137,13 +137,8 @@ Please choose a file: <input name="uploaded" type="file" /><br />
 </td>
 <td><div id="filtered"></div></td>
 </tr>
-<tr>
-<td></td>
-<td><div id="ajaxecho"></div></td>
-<td></td>
-<td></td></td>
-</tr>
 </table>
+<div id="ajaxecho"></div>
 </div>
 </div>
 </body>
