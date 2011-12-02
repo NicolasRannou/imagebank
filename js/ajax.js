@@ -43,7 +43,7 @@ function UpdateCurrentImage(filename)
   }
 
   
-  var im = "currentimage.php?var1=";
+  var im = "ajax/currentimage.php?var1=";
   var ag = im.concat(filename);
   
   xmlHttp.open("GET", ag, true); 
@@ -71,7 +71,7 @@ function RequestUpdateImageIfAny()
     }
   }
     
-  xmlHttp.open("GET", "currentimageupdate.php", true); 
+  xmlHttp.open("GET", "ajax/currentimageupdate.php", true); 
   xmlHttp.send(null);
 }
 
@@ -105,7 +105,7 @@ function UpdateTestCommand(file)
     }
   }
   
-  var im = "testcommand.php?var1=";
+  var im = "ajax/testcommand.php?var1=";
   var ag = im.concat(file);
   
   xmlHttp.open("GET", ag, true);
